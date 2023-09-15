@@ -1,0 +1,30 @@
+body {
+    background-color: #F2EBBF;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mainBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 40vw;
+    height: 200px;
+    background-color: #8CBEB2;
+    border: 5px solid #5C4B51;
+    border-radius: 10px;
+    h1 {
+        display: flex;
+        align-items: center;
+        color: #fff;
+        font-weight: 700;
+        font-size: 2em;
+        i {
+            margin-left: 20px;
+            color: #5C4B51;
+        }
+    }
+}

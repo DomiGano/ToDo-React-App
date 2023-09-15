@@ -1,8 +1,10 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
+import { MainBox } from "./MainBox";
+import "../style/main.scss"
 
 const App = () => { 
-    return <h1 style={{fontFamily: 'Poppins,  sans-serif'}}>Work in progress  <i class="fa-solid fa-code"></i></h1>
+    return <MainBox/>
 }
 
 const container = document.getElementById("app");
