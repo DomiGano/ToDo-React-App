@@ -9,7 +9,7 @@ export const MainBox = () => {
 
     return (
         <>
-        <div style={{ 
+        <div className="mainAnim" style={{ 
             margin: "2em auto",
             backgroundColor: '#8CBEB2',
             border: '5px solid #5C4B51',

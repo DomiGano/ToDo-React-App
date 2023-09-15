@@ -5,6 +5,9 @@ body {
     justify-content: center;
     align-items: center;
     font-family: Poppins,  sans-serif;
+    .mainAnim {
+        animation: myAnim 1.5s infinite linear alternate;
+    }
 }
 
 .mainBox {
@@ -91,5 +94,14 @@ body {
                 }
             }
         }
+    }
+}
+
+@keyframes myAnim {
+    0% {
+        transform: scale(1);
+    } 
+    100% {
+        transform: scale(1.05);
     }
 }
