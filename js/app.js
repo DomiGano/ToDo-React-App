@@ -2,7 +2,7 @@ import React from "react";
 import { createRoot } from "react-dom/client";
 
 const App = () => { 
-    return <h1>Hello</h1>
+    return <h1 style={{fontFamily: 'Poppins,  sans-serif'}}>Work in progress  <i class="fa-solid fa-code"></i></h1>
 }
 
 const container = document.getElementById("app");
