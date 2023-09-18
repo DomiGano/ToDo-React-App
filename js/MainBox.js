@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { AddTask } from "./AddTask";
+import { TaskList } from "./TaskList";
 
 export const MainBox = () => {
     const [tasks, setTasks] = useState([])
@@ -28,13 +29,10 @@ export const MainBox = () => {
 
 
         <div className="mainBox">
-            <AddTask setTasks={setTasks}/>
-            
-            <ul>
-            {tasks.map((element, index) => {
-               return <li key={index}>TITLE: {element.title} DESCRIPTION: {element.description}</li> 
-            })}
-            </ul>
+            <AddTask setTasks={setTasks} tasks={tasks}/>
+            <div className="taskListBox" style={tasks.length <= 0 ? {display: "none"} : {display: "block"}}>
+            <TaskList tasks={tasks}/>
+            </div>
         </div>
 
 

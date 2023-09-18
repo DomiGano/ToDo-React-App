@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 
-export const AddTask = ({setTasks}) => {
+export const AddTask = ({setTasks, tasks}) => {
     const [title, setTitle] = useState("")
     const [description, setDescription] = useState("")
 
 
     const newTask = () => {
-            setTasks(prevTasks => [...prevTasks, {title: title, description: description}])
+            setTasks(prevTasks => [...prevTasks, {title: title, description: description, id: prevTasks.length}])
             setTitle("")
             setDescription("")
     }
