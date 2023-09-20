@@ -1,14 +1,42 @@
 import React, { useEffect, useState } from "react";
 import { AddTask } from "./AddTask";
 import { TaskList } from "./TaskList";
-import { getTasks, pushTask } from "../api/task";
+import { getTasks } from "../api/task";
+import { API_KEY, API_URL } from "../api/constants";
+
+
+
 
 export const MainBox = () => {
     const [tasks, setTasks] = useState([])
 
+
     useEffect(() => {
         getTasks(setTasks)
     }, [])
+
+    const deleteTask = (taskId) => {
+        fetch(`${API_URL}/tasks/${taskId}`, {
+          method: "DELETE",
+          headers: {
+            Authorization: API_KEY,
+            "Content-Type": "application/json",
+          },
+        })
+          .then(() => {
+            getTasks(setTasks);
+          })
+          .catch((error) => {
+            console.error("Błąd usuwania zadania:", error);
+          });
+      };
+    
+
+    //   For Dev Testing and Clear Data Base 
+      const clearAll = () => {
+        tasks.forEach(element => deleteTask(element.id))
+    }
+
 
     return (
         <>

@@ -1,10 +1,5 @@
 import { API_KEY, API_URL } from "./constants";
 
-/**
- * Fetch all tasks
- * @param {function} successCallback - Function that saves incoming data
- */
-
 export const getTasks = (successCallback) => {
   fetch(`${API_URL}/tasks`, {
     headers: {
@@ -19,4 +14,6 @@ export const getTasks = (successCallback) => {
     })
     .catch(err => console.log(err));
 };
+
+
   
