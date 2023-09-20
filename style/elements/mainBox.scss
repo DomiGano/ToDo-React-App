@@ -34,6 +34,7 @@ body {
         }
     }
     .addTask {
+        position: relative;
         flex-grow: 1;
         align-self: flex-start;
         display: flex;
@@ -96,6 +97,20 @@ body {
                 i {
                     color: #fff;    
                 }
+            }
+        }
+        .erorrBox {
+            bottom: -3.5em;
+            position: absolute;
+            width: 100%;
+            border-radius: 10px;
+            background-color: #F06060;
+            border: 3px solid #5C4B51;
+            .erorrText {
+                font-weight: 600;
+                font-size: 0.8em;
+                color: #fff;
+                margin: 0.6em;
             }
         }
     }
