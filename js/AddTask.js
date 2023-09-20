@@ -1,15 +1,38 @@
 import React, { useState } from "react";
+import { API_KEY, API_URL } from "../api/constants";
+import { pushTask, getTasks} from "../api/task";
 
-export const AddTask = ({setTasks, tasks}) => {
+export const AddTask = ({setTasks}) => {
     const [title, setTitle] = useState("")
     const [description, setDescription] = useState("")
 
+    const clearValues = () => {
+        setDescription("")
+        setTitle("")
+    }
 
     const newTask = () => {
-            setTasks(prevTasks => [...prevTasks, {title: title, description: description, id: prevTasks.length}])
-            setTitle("")
-            setDescription("")
-    }
+        const data = {title: title, description: description, status: false}
+
+        fetch(`${API_URL}/tasks`, {
+            method: "POST",
+            headers: {
+              Authorization: API_KEY,
+              "Content-Type": "application/json", 
+            },
+            body: JSON.stringify(data),
+          })
+            .then((response) => response.json())
+            .then((data) => {
+              if (data.error === false && typeof clearValues === "function") {
+                clearValues();
+                getTasks(setTasks);
+              }
+            })
+            .catch((err) => console.log(err));
+        };
+            
+      
 
     return (
         <div className="addTask">

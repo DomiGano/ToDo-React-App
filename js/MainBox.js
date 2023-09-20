@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { AddTask } from "./AddTask";
 import { TaskList } from "./TaskList";
+import { getTasks, pushTask } from "../api/task";
 
 export const MainBox = () => {
     const [tasks, setTasks] = useState([])
 
-
-
+    useEffect(() => {
+        getTasks(setTasks)
+    }, [])
 
     return (
         <>
@@ -29,12 +31,11 @@ export const MainBox = () => {
 
 
         <div className="mainBox">
-            <AddTask setTasks={setTasks} tasks={tasks}/>
+            <AddTask setTasks={setTasks}/>
             <div className="taskListBox" style={tasks.length <= 0 ? {display: "none"} : {display: "block"}}>
             <TaskList tasks={tasks}/>
             </div>
         </div>
-
 
     </>
     )
