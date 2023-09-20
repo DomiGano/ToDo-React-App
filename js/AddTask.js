@@ -16,10 +16,8 @@ export const AddTask = ({setTasks}) => {
 
         if(title.length < 2) {
           setError("Tytuł powinien zawierać minimum 2 znaki")
-          console.log(error)
         } else {
           setError("")
-          console.log(error)
 
         fetch(`${API_URL}/tasks`, {
             method: "POST",
@@ -48,10 +46,11 @@ export const AddTask = ({setTasks}) => {
             <input className="addTask__input addTask__input-title" value={title} onChange={(e) => setTitle(e.target.value)} type="text" placeholder="Tytuł"></input>
             <input className="addTask__input addTask__input-description" value={description} onChange={(e) => setDescription(e.target.value)} type="text" placeholder="Opis"></input>
             <button className="addButton" onClick={() => newTask()}>Dodaj zadanie <i className="fa-solid fa-circle-plus"></i></button>
+            <div className="erorrBox">
+          <h4 className="erorrText" style={error == "" ? {display: "none"} : {display: "block"}}>{error}</h4>
+          </div>
         </div>
-        <div>
-          <h4 style={error == "" ? {display: "none"} : {display: "block"}}>Błąd: {error}</h4>
-        </div>
+     
         </>
     )
 }
