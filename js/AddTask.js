@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { API_KEY, API_URL } from "../api/constants";
-import { pushTask, getTasks} from "../api/task";
 
 export const AddTask = ({setTasks}) => {
     const [title, setTitle] = useState("")
@@ -26,7 +25,6 @@ export const AddTask = ({setTasks}) => {
             .then((data) => {
               if (data.error === false && typeof clearValues === "function") {
                 clearValues();
-                getTasks(setTasks);
               }
             })
             .catch((err) => console.log(err));

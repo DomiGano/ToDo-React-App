@@ -13,7 +13,7 @@ export const MainBox = () => {
 
     useEffect(() => {
         getTasks(setTasks)
-    }, [])
+    })
 
 
     return (

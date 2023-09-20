@@ -1,5 +1,4 @@
 import React from "react";
-import { getTasks } from "../api/task";
 import { API_KEY, API_URL } from "../api/constants";
 
 export const TaskRemoveButton = ({taskId, setTasks}) => {
@@ -12,9 +11,6 @@ const deleteTask = (taskId) => {
         "Content-Type": "application/json",
       },
     })
-      .then(() => {
-        getTasks(setTasks);
-      })
       .catch((error) => {
         console.error("Błąd usuwania zadania:", error);
       });
