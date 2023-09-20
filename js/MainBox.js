@@ -15,28 +15,6 @@ export const MainBox = () => {
         getTasks(setTasks)
     }, [])
 
-    const deleteTask = (taskId) => {
-        fetch(`${API_URL}/tasks/${taskId}`, {
-          method: "DELETE",
-          headers: {
-            Authorization: API_KEY,
-            "Content-Type": "application/json",
-          },
-        })
-          .then(() => {
-            getTasks(setTasks);
-          })
-          .catch((error) => {
-            console.error("Błąd usuwania zadania:", error);
-          });
-      };
-    
-
-    //   For Dev Testing and Clear Data Base 
-      const clearAll = () => {
-        tasks.forEach(element => deleteTask(element.id))
-    }
-
 
     return (
         <>
