@@ -61,7 +61,7 @@ export const MainBox = () => {
         <div className="mainBox">
             <AddTask setTasks={setTasks}/>
             <div className="taskListBox" style={tasks.length <= 0 ? {display: "none"} : {display: "block"}}>
-            <TaskList tasks={tasks}/>
+            <TaskList tasks={tasks} setTasks={setTasks}/>
             </div>
         </div>
 
