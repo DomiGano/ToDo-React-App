@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { AddTask } from "./AddTask";
 import { TaskList } from "./TaskList";
 import { getTasks } from "../api/task";
-import { API_KEY, API_URL } from "../api/constants";
 
 
 

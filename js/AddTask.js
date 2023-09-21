@@ -12,7 +12,7 @@ export const AddTask = ({setTasks}) => {
     }
 
     const newTask = () => {
-        const data = {title: title, description: description, status: false}
+        const data = {title: title, description: description, status: ""}
 
         if(title.length < 2) {
           setError("Tytuł powinien zawierać minimum 2 znaki")
