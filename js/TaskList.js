@@ -1,15 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import { TaskRemoveButton } from "./TaskRemoveButton";
 import { AddSubTask } from "./AddSubTask";
 
 export const TaskList = ({tasks, setTasks}) => { 
+
     return (
         
         <ul className="tasksList">
     {tasks.map((element) => {
        return <li className="task" key={element.id}>ZADANIE: {element.title} <br/> <span className="taskDescription">OPIS: <br/> {element.description}</span>
         <AddSubTask/>
-       <TaskRemoveButton setTasks={setTasks} taskId={element.id}/></li> 
+       <TaskRemoveButton setTasks={setTasks} taskId={element.id}/>
+       </li> 
+       
     })}
     </ul>
 
