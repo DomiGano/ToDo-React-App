@@ -17,6 +17,6 @@ const deleteTask = (taskId) => {
   };
 
   return (
-    <button className="removeButton" onClick={() => deleteTask(taskId)}><i className="fa-solid fa-trash"></i></button>
+    <button className="removeButton taskButton" onClick={() => deleteTask(taskId)}><i className="fa-solid fa-trash"></i></button>
   )
 }
